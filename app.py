@@ -1,9 +1,9 @@
 from flask import Flask, request
 import PyPDF2
 from flask_cors import CORS
-import io
 
 app = Flask(__name__)
+CORS(app)
 
 @app.route('/parse', methods=['post'])
 def rotate():
