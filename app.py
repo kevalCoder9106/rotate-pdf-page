@@ -1,6 +1,7 @@
 from flask import Flask, request
 import PyPDF2
 from flask_cors import CORS
+import os
 
 app = Flask(__name__)
 CORS(app)
@@ -30,7 +31,6 @@ def rotate():
     with open("parsed_pdf.pdf", "wb") as f:
         writer.write(f)
 
-
-    return 'parsed'
+    return os.path.join(os.getcwd(), "parsed_pdf.pdf")
 
 app.run()
